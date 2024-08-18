@@ -1,0 +1,20 @@
+{
+    "name": "Cinder Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind"
+    ],
+    "remoteUser": "vscode",
+    "extensions": [
+        "ms-vscode.cpptools",
+        "ms-python.python"
+    ],
+    "postCreateCommand": "cd /workspace && mkdir -p build && cd build && cmake ..",
+    "workspaceFolder": "/workspace"
+}
